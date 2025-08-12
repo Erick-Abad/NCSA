@@ -7,9 +7,7 @@
     "start": "node api/index.js"
   },
   "dependencies": {
-    "express": "^4.19.2",
-    "mysql2": "^3.10.0",
-    "serverless-http": "^3.2.0"
+    "mysql2": "^3.10.0"
   },
   "devDependencies": {
     "vercel": "^34.2.5"

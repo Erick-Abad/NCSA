@@ -13,5 +13,8 @@
   },
   "devDependencies": {
     "vercel": "^34.2.5"
+  },
+  "engines": {
+    "node": "18.x"
   }
 }

@@ -1,8 +1,9 @@
 import mysql from "mysql2/promise";
 
-const ssl = process.env.DATABASE_SSL === "true"
-  ? { ca: process.env.DATABASE_CA?.replace(/\\n/g, "\n") }
-  : undefined;
+const ssl =
+  process.env.DATABASE_SSL === "true"
+    ? { ca: process.env.DATABASE_CA?.replace(/\\n/g, "\n") }
+    : undefined;
 
 export const pool = mysql.createPool({
   host: process.env.DATABASE_HOST,
@@ -13,7 +14,7 @@ export const pool = mysql.createPool({
   waitForConnections: true,
   connectionLimit: 5,
   queueLimit: 0,
-  ssl
+  ssl,
 });
 
 export async function query(sql, params = []) {

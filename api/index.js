@@ -10,14 +10,14 @@ app.use(express.json());
 // API
 app.use("/api", routes);
 
-// Static files (optional for local dev)
+// (solo útil en local: servir /public)
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 app.use("/", express.static(path.join(__dirname, "..", "public")));
 
 export default serverless(app);
 
-// Local run (optional)
+// Local (opcional para pruebas)
 if (process.env.NODE_ENV !== "production") {
   const port = process.env.PORT || 3000;
   app.listen(port, () => console.log("Dev server http://localhost:" + port));

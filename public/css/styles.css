@@ -1,0 +1,37 @@
+/* VARIABLES Y BASE */
+:root{
+  --card-radius: 1rem;
+  --hero-bg: #f8f9fa;
+}
+*{ box-sizing: border-box; }
+html, body{ height: 100%; }
+body{ display: flex; flex-direction: column; }
+
+/* HERO */
+.hero{ background: var(--hero-bg); }
+.hero-illustration{
+  min-height: 220px;
+  background: linear-gradient(135deg,#e9ecef, #dee2e6);
+}
+
+/* CARDS */
+.card{ border-radius: var(--card-radius); }
+.card .card-title{ margin-bottom: .25rem; }
+
+/* NAVBAR LINKS TÁCTILES */
+.navbar .nav-link{ padding-inline: .5rem; }
+@media (min-width: 768px){
+  .navbar .nav-link{ padding-inline: .75rem; }
+}
+
+/* TIPOGRAFÍA RESPONSIVA */
+h1{ font-size: clamp(1.8rem, 3.5vw, 2.75rem); }
+.lead{ font-size: clamp(1rem, 2.2vw, 1.25rem); }
+
+/* ESPACIADOS DE SECCIONES */
+.section-block{ scroll-margin-top: 88px; } /* evita que el anchor quede tapado por la navbar */
+
+/* ACCESIBILIDAD / MOVIMIENTO REDUCIDO */
+@media (prefers-reduced-motion: reduce){
+  *{ animation: none !important; transition: none !important; }
+}
